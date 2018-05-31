@@ -5,14 +5,14 @@ import random
 
 class generate_password(vertica_sdk.ScalarFunction):
     """Return the sum of two integer columns"""
- 
+
     lower_case = 'abcdefghijklmnopqrstuvwxyz'
     upper_case = lower_case.upper()
     digits = '1234567890'
     symbols = '!#$*%@()[].,?'
 
     def __init__(self):
-	N = 12
+        N = 12
         pass
 
     def setup(self, server_interface, col_types):
@@ -26,10 +26,10 @@ class generate_password(vertica_sdk.ScalarFunction):
             else:
                 input_varchar = arg_reader.getString(0)  # Input column
 
-           
+
             hash = ''.join(random.choices(upper_case + lower_case + digits + symbols, k=N))
 
- 
+
             if not arg_reader.next():
                 break
 
