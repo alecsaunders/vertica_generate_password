@@ -8,7 +8,7 @@ class generate_password(vertica_sdk.ScalarFunction):
 
     lower_case = 'abcdefghijklmnopqrstuvwxyz'
     upper_case = lower_case.upper()
-    digits = '1234567890'
+    digits = '123456789012345'  # The extra 5 numbers are so that the total number of available character symbols = 100
     symbols = "#!+*?,./=~-$_: \"'%&();<>@`[]\^|{}"
 
     def setup(self, server_interface, col_types):
