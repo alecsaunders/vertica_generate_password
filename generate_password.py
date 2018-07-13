@@ -39,4 +39,4 @@ class generate_password_factory(vertica_sdk.ScalarFunctionFactory):
         return_type.addVarchar()
 
     def getReturnType(self, srv_interface, arg_types, return_type):
-        return_type.addVarchar(24)
+        return_type.addVarchar(100)
