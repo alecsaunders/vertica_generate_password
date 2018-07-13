@@ -16,11 +16,7 @@ class generate_password(vertica_sdk.ScalarFunction):
 
     def processBlock(self, server_interface, arg_reader, res_writer):
         while(True):
-            if arg_reader.isNull(0):
-                raise ValueError("I found a NULL!")
-            else:
-                pass_len = arg_reader.getInt(0)  # Password length input column
-
+            pass_len = arg_reader.getInt(0)  # Password length input column
             pass_len = 8 if pass_len < 8 else pass_len
             pass_len = 100 if pass_len > 100 else pass_len
 
