@@ -26,7 +26,7 @@ class generate_password(vertica_sdk.ScalarFunction):
                 pass_len = arg_reader.getInt(0)  # Input column
 
             pass_len = 8 if pass_len < 8 else pass_len
-            pass_len = 24 if pass_len > 24 else pass_len
+            pass_len = 100 if pass_len > 100 else pass_len
 
             new_password = ''.join(random.sample(self.lower_case + self.upper_case + self.digits + self.symbols, pass_len))
             res_writer.setString(new_password)
