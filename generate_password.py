@@ -9,7 +9,7 @@ class generate_password(vertica_sdk.ScalarFunction):
     lower_case = 'abcdefghijklmnopqrstuvwxyz'
     upper_case = lower_case.upper()
     digits = '1234567890'
-    symbols = '!#$*%@()[].,?'
+    symbols = "#!+*?,./=~-$_: \"'%&();<>@`[]\^|{}"
 
     def __init__(self):
         pass
