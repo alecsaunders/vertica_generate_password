@@ -2,8 +2,9 @@
 Simple Vertica UDx—written in Python—for generating random passwords
 
 ## Installation
-+ Clone this repo on a node with Vertica installed
-+ In Vertica run the following two commands
+* Clone this repo on a node with Vertica installed
+  * This script depends on the `vertica_sdk` python library, which is a part of the Vertica installation
+* In Vertica run the following two commands
 
 ```sql
 CREATE OR REPLACE LIBRARY gen_pass_lib AS '/path/to/file/generate_password.py' LANGUAGE 'Python';
